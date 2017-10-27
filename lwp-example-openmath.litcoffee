@@ -1,5 +1,5 @@
 
-# OpenMath Content Dictionary Example webLurch Application
+# OpenMath Content Dictionary Example Application, Lurch Web Platform
 
 ## Overview
 
