@@ -21,8 +21,6 @@ Content Dictionaries.
 
 [Visit the app here.](https://lurchmath.github.io/lwp-example-openmath)
 
-Load an example document here (coming soon).
-
 Try these things:
 
 To insert any kind of comment about the dictionary structure:
