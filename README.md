@@ -17,6 +17,13 @@ unfamiliar with the structure of a Content Dictionary, see the online
 [explanation and archive](https://www.openmath.org/cd/) of OpenMath
 Content Dictionaries.
 
+Read the (heavily commented) code here:
+
+ * [App code](lwp-example-openmath.litcoffee) for this specific example
+ * [HTML code](index.html) that loads the platform and application
+
+There is also a very simple [build process](gulpfile.litcoffee).
+
 ## How to use the app
 
 [Visit the app here.](https://lurchmath.github.io/lwp-example-openmath)
@@ -73,9 +80,27 @@ How to build meaning:
  * As mentioned above, comments between structures are useful but not
    required.
 
-Read the (heavily commented) code here:
+## Bugs/enhancements
 
- * [App code](lwp-example-openmath.litcoffee) for this specific example
- * [HTML code](index.html) that loads the platform and application
+About this demo app specifically:
 
-There is also a very simple [build process](gulpfile.litcoffee).
+ * Create an importer that reads in OM CDs and creates documents from them
+   that use Groups.  This would then truly be an OM CD Editor.
+ * The validation routine is one routine with four independent checks.
+   That's perfect for breaking into four separate routines and enqueueing
+   all into the background as separate tasks, a nice test of that model.
+
+About the [XML groups
+module](https://github.com/lurchmath/lurch/blob/master/source/auxiliary/xml-groups.litcoffee)
+that this app replies upon, from the main Lurch repository:
+
+ * On double-click of a close grouper, give more detailed feedback about
+   failed structural rules.
+ * Make an option for whether to show tags even when the cursor is not in
+   the bubble.  If so, make the open decoration of every bubble
+   "#{tagName}:".
+ * Each tag's data should be able to specify a set of Group attributes that
+   should be copied into the XML output as element attributes.  Then
+   clients can create their own UI for editing such attributes, and just
+   store them in the Groups themselves, content with the fact that the
+   `xml-groups` module will carry that data over into the XML output.
